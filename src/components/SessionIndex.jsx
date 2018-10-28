@@ -9,7 +9,9 @@ const SessionIndex = ({ sessions, handleCreateSession, deleteSession }) => {
     return (
         <div>
             <h1>Your sessions</h1>
+            <hr/>
             <SessionEntryList sessions={sessions} deleteSession={deleteSession} />
+            <hr/>
             <SessionEntryNew handleCreateSession={handleCreateSession}/>
         </div>
     )

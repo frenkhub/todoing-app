@@ -16,12 +16,22 @@ export const Mix = {
 
     // time is in milliseconds
     formatTime: time => {
-        var date = new Date(time);
         var output = "";
+        var h = 0;
+        var m = 0;
+        var s = 0;
 
-        var h = date.getHours();
-        var m = date.getMinutes();
-        var s = date.getSeconds();
+        s = time / 1000;
+
+        m = s / 60;
+        s = s % 60;
+
+        h = m / 60;
+        m = m % 60;
+
+        s = Math.floor(s);
+        m = Math.floor(m);
+        h = Math.floor(h);
 
         var output = h + "h : " + m + "m : " + s + "s";
 

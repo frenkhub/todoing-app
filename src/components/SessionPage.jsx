@@ -16,11 +16,13 @@ const SesionPage = ({
     return (
         <div>
             <h1>Session {x.name}</h1>
+            <hr/>
             <TaskEntryList
                 tasks={Object.values(x.tasks)}
                 deleteTask={id => deleteTask(x.id, id)}
                 startTask={id => startTask(x.id, id)}
                 pauseTask={id => pauseTask(x.id, id)} />
+            <hr/>
             <TaskEntryNew createTask={payload => createTask(x.id, payload)} />
         </div>)
 }

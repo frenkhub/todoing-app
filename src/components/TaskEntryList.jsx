@@ -29,20 +29,17 @@ class SessionEntryList extends Component {
         } = this.props;
 
         return (
-            <ListGroup>
+            <Grid>
                 {
                     tasks.map(x =>
-                        <ListGroupItem key={x.id}>
-                            <Grid fluid={true}>
-                                <TaskEntry
-                                    task={x}
-                                    deleteTask={() => deleteTask(x.id)}
-                                    startTask={() => startTask(x.id)}
-                                    pauseTask={() => pauseTask(x.id)} />
-                            </Grid>
-                        </ListGroupItem>)
+                        <TaskEntry
+                            key={x.id}
+                            task={x}
+                            deleteTask={() => deleteTask(x.id)}
+                            startTask={() => startTask(x.id)}
+                            pauseTask={() => pauseTask(x.id)} />)
                 }
-            </ListGroup>
+            </Grid>
         )
     }
 }
